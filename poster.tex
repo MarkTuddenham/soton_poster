@@ -1,0 +1,325 @@
+\documentclass[24pt, a0paper, landscape, margin=0mm, innermargin=40mm,
+blockverticalspace=15mm, colspace=15mm, subcolspace=8mm]{tikzposter} 
+
+% \newlength{\posterscale}
+% \setlength{\posterscale}{60cm}
+% % Landscape so reverse
+% \geometry{paperwidth=0.6\posterscale, paperheight=\posterscale}
+% \makeatletter
+% \setlength{\TP@visibletextwidth}{\textwidth-2\TP@innermargin}
+% \setlength{\TP@visibletextheight}{\textheight-2\TP@innermargin}
+% \makeatother
+
+\tikzposterlatexaffectionproofoff
+
+\makeatletter
+\def\input@path{{res/}}
+\makeatother
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{sotonbrand}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{changepage}
+% \usepackage{natbib}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage[most]{tcolorbox}
+\usepackage{wrapfig}
+\usepackage[colalign]{myposter} % TODO for final
+% \usepackage{myposter}
+\usepackage{cleveref}
+
+% \renewcommand{\bibsection}{}
+\RequirePackage[
+  backend=biber,
+  style=ieee,
+  sortlocale=en_GB,
+  natbib=true,
+  url=true,
+  doi=true,
+  eprint=false,
+  maxcitenames=2,
+  mincitenames=1
+]{biblatex}
+
+\addbibresource{library.bib}
+
+\usetikzlibrary{matrix,positioning}
+
+\tikzset{ 
+	table/.style={
+		matrix of nodes,
+		row sep=-\pgflinewidth,
+		column sep=-\pgflinewidth,
+		nodes={rectangle,draw=black,text width=1.25ex,align=center},
+		text depth=0.25ex,
+		text height=1ex,
+		nodes in empty cells
+	},
+	texto/.style={font=\footnotesize\sffamily},
+	title/.style={font=\small\sffamily}
+}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[]
+
+% Commands
+\newcommand{\bs}{\textbackslash}   % backslash
+\newcommand{\cmd}[1]{{\bfseries \color{red}#1}}   % highlights command
+
+\newcommand{\logg}[1]{\log\!\left(#1 \right)}
+\newcommand{\av}[2][]{\mathbb{E}_{#1\!}\left[ #2 \right]}
+\newcommand{\Prob}[2][]{\mathbb{P}_{#1\!}\left[ #2 \right]}
+\newcommand{\grad}{\bm{\nabla}}
+\newcommand{\tr}{\mathsf{T}}
+% \renewcommand{\vec}[1]{\bm{#1}}
+\newcommand{\mat}[1]{\boldsymbol{\mathsf{#1}}}
+% \newcommand{\e}[1]{{\rm exp}\!\left( #1 \right)} % exp(x)
+\newcommand{\e}[1]{{\rm e}^{#1}} % e^x
+
+\newcommand{\ie}{\textit{i.e.}}
+\newcommand{\eg}{\textit{e.g.}}
+\newcommand{\inc}{\textit{inc.}}
+\newcommand{\etc}{\textit{etc.}}
+\newcommand{\wrt}{\textit{w.r.t.}}
+
+\newcommand{\Hlr}{H^{\text{\small Low Rank}}}
+
+% Coloured Boxes
+\newtcbox{\mybox}[3][]{mystyle, #1, title=#2, overlay={#3}}
+
+% Title, Author, Institute
+\title{Quasi-Newton's method in the class gradient defined high-curvature subspace}
+\author{Mark Tuddenham, Adam Pr\"{u}gel-Bennett, \& Jonathon Hare}
+\institute{Vision, Learning, and Control Group, Electronics and Computer Science, University of Southampton}
+% \institute{Vision, Learning, and Control Group, University of Southampton}
+% \institute{Electronics and Computer Science, University of Southampton}
+
+
+\usetheme{SotonBacked}
+
+
+\begin{document}
+\maketitle
+
+\begin{columns}
+	\column{.45}
+	\block[titlecenter,roundedcorners=14]{Class gradients}{
+
+	% \begin{minipage}[t]{\linewidth}
+	% 	\strut\vspace*{-\baselineskip}\newline
+	% \innerblock[titlewidthscale=1,bodywidthscale=1,titlefgcolor=plainblack]{}{
+	{\centering
+			\coloredbox[width=0.82\linewidth]{
+				Classification problems using deep learning have been shown to have a high-curvature subspace in the loss landscape equal in dimension to the number of classes.
+				Moreover, this subspace corresponds to the subspace spanned by the logit gradients for each class.
+				An obvious strategy to speed up optimisation would be to use Newton's method in the high-curvature subspace and stochastic gradient descent in the co-space.
+				We show that a naive implementation actually slows down convergence and we speculate why this might be.
+			}
+		}
+	% \end{minipage}
+	% Classification problems using deep learning have been shown to have a high-curvature subspace in the loss landscape equal in dimension to the number of classes.
+	% Moreover, this subspace corresponds to the subspace spanned by the logit gradients for each class.
+	% An obvious strategy to speed up optimisation would be to use Newton's method in the high-curvature subspace and stochastic gradient descent in the co-space.
+	% We show that a naive implementation actually slows down convergence and we speculate why this might be.
+	\begin{wrapfigure}{R}{0.4\linewidth}
+		\begin{tikzfigure}
+			% \includegraphics[width=0.75\linewidth]{../NeurIPS2020/plots/class_gradients.png}
+			% \captionof{figure}{Comparison of batch sizes for a small CNN (400 parameters) on MNIST.}
+			% \label{fig:batch_comparison}
+		\end{tikzfigure}
+	\end{wrapfigure}
+
+	\citet{GurAri2018} show that gradient descent is mostly contained in a small subspace, so although the problem is high-dimensional, the optimisation is limited by a low-dimensional high-curvature subspace.
+	That subspace, spanned by the class gradients, intersects with the top-$C$ eigenvectors of the Hessian~\cite{Papyan2019, Ghorbani2019}.
+
+
+	% We consider a classification problem with data, $\mathcal{D} = \left\{ (x^{\mu},y^{\mu})\, \big|\, \mu\in[1,N]\right\}$ where \(y^{\mu}\) is a $C$-dimensional one hot vector, as in \citet{Fort2019}.
+
+	% We will look at some deep network with parameters, $\theta$, that calculates logits, $z_k^\mu$, which gives class probabilities, $p_k^\mu$, via a softmax.
+	% We will train this network with a cross-entropy loss, $\mathcal{L}^\mu(\theta)$ for an input $(x^{\mu},y^{\mu}) \in \mathcal{D}$.
+
+	% and so the Hessian has components
+	% \vspace*{-2em}
+	% \begin{tikzfigure}
+	% 	\begin{align}
+	% 		H^{\mathcal{B}}_{\alpha\beta} =
+	% 		\frac{\partial^2 \mathcal{L}(\theta)}{\partial \theta_\alpha\partial \theta_\beta}
+	% 		 & = \frac{1}{|\mathcal{B}|} \sum_{\mu \in \mathcal{B}}
+	% 		\sum_{k=1}^C \sum_{\ell=1}^C
+	% 		p_k^\mu \left(  \delta_{k\ell} - \,p_\ell^\mu \right)
+	% 		\frac{\partial z_k^{\mu}}{\partial \theta_\alpha}
+	% 		\frac{\partial z_\ell^{\mu}}{\partial \theta_\beta} +\frac{1}{|\mathcal{B}|} \sum_{\mu \in \mathcal{B}}
+	% 		\sum_{k=1}^C   (p_k^{\mu} - y_k^{\mu})\,
+	% 		\frac{\partial^2 z_k^{\mu}}{\partial \theta_\alpha\partial \theta_\beta}
+	% 		\label{eq:Hessian}
+	% 	\end{align}
+	% \end{tikzfigure}
+
+
+
+	\citet{Fort2019} define the class gradient as
+	% \begin{tikzfigure}
+	% 	\vspace{-2em}
+	\begin{equation}
+		c_k = \frac{1}{| \mathcal{D}_k|}\sum_{\mu\in \mathcal{D}_k} \grad z_k^{\mu}
+	\end{equation}
+	% \end{tikzfigure}
+
+	where \(\mathcal{D}_k\) is the set of training examples,$\left\{ (x^{\mu},y^{\mu})\right\}$, belonging to class \(k\) and $z_k$ is the $k^\text{th}$ logit.
+
+	}
+
+	% \useinnerblockstyle{lightblock}
+	\block[titlecenter]{Quasi-Newton's method}{
+
+	Let the logit gradients be decomposed as
+	% \begin{tikzfigure}
+	% \vspace{-3em}
+	\begin{equation}
+		\grad z_k^{\mu} = y^{\mu}_k\,c_k + \epsilon_k^{\mu}.
+		\label{eq:logits}
+	\end{equation}
+	% \end{tikzfigure}
+
+	Then we can create a low-rank Hessian approximation as
+	% \begin{tikzfigure}
+	% \vspace{-3em}
+	\begin{equation}
+		\Hlr \approx
+		\sum_{k=1}^C \left( \frac{1}{|\mathcal{B}|}
+		\sum_{\mu \in \mathcal{B}} y_k^\mu \,
+		p_k^{\mu}(1 - p_k^{\mu})   \right)       c_k\, c_k^\tr
+		\label{eq:hessian_approx}
+	\end{equation}
+	% \end{tikzfigure}
+
+	where $p_k^{\mu}$ are the class probabilities and, following \citet{Fort2019}, we ignore the terms of the Hessian that are sufficiently small since its eigensystem will remain unchanged~\cite{BenaychGeorges2011}.
+
+	Assuming that the class gradients are orthogonal we can define
+	\begin{equation}
+		\Hlr = \sum_{k=1}^C \lambda_k v_k \, v_k^\tr,
+	\end{equation}
+	where $v_k = c_k/|c_k|$ and
+	$\lambda_k = \frac{1}{|\mathcal{B}|}
+		\sum_{\mu \in \mathcal{B}} y_k^\mu \,
+		p_k^\mu \,(1-p_k^\mu)  \, |c_k|^2.$
+	The generalised inverse, ${(\Hlr)}^\dagger$, is simply the reciprocal of $\Hlr$.
+	Then, doing Newton's method in the high-curvature subspace, $\theta' \leftarrow \theta - {(\Hlr)}^\dagger g^\mathcal{B}$, and stochastic gradient descent, with a learning rate $\eta$, in the co-space using a projection
+	\begin{equation}
+		\mathbf{P} = \mat{I} - \sum_{k=1}^C v_k\,v_k^\tr
+	\end{equation}
+	we get the update equation
+	\vspace*{0.5em}
+	\coloredbox{
+		\vspace*{-0.3em}
+		\begin{equation}
+			\theta' \leftarrow \theta - \eta g^\mathcal{B} - \sum_{k=1}^C \left( \frac{1}{\lambda_k} - \eta \right) (v_k^\tr g^\mathcal{B})\, v_k.
+			\label{eq:learning_update}
+		\end{equation}
+		\vspace*{-0.5em}
+	}
+	% \vspace*{0.6em}
+	To lower the stochasticity of the estimation of the eigensystem of $\Hlr$ we use an exponential moving average to estimate both $v_k$ and $\lambda_k$.
+
+	}
+
+	\column{0.35}
+
+	\block[titlecenter]{Comparison to SGD}{
+
+		\begin{tikzfigure}
+			\vspace*{-1.5em} % TODO check not too big
+			% \includegraphics[width=\linewidth]{../NeurIPS2020/plots/sgd_quasi_losses.png}
+			\captionof{figure}{\normalsize Typical validation loss when training a ResNet9 (6.5M parameters) for both SGD and quasi-Newton's method on CIFAR-10}
+			\vspace*{1em}
+			\label{fig:w_wo_hessian_learning}
+		\end{tikzfigure}
+
+		\begin{itemize}
+			\item The final performances are similar, test loss is $\approx 0.50$ and accuracy $87\%$.
+			\item The quasi-Newton's method is more volatile and is slower to improve in general.
+			\item One would expect to be able to use a higher learning rate with the quasi-Newton's method as that applies only to the low-curvature subspace, however, this is not true, and both methods diverge at $\eta > 10^{-1}$
+		\end{itemize}
+		% We can see that the final performance is similar (test loss is $\approx 0.50$ and accuracy $87\%$); however, the quasi-Newton's method is more volatile and is slower to improve in general.
+
+		% One would expect to be able to use a higher learning rate with the quasi-Newton's method as that applies to the low-curvature subspace, however, this is not true, and both methods diverge at, $\eta > 10^{-1}$.
+
+		\vspace*{1em}
+		\hrule
+		\vspace*{1em}
+
+		To see if inter-batch noise causes the lack of improvement, we have trained a small CNN on MNIST so that full-batch training is feasible.
+
+		\begin{tikzfigure}
+			% \includegraphics[width=\linewidth]{../NeurIPS2020/plots/all_losses_1.png}
+			\captionof{figure}{Comparison of batch sizes for a small CNN (400 parameters) on MNIST.}
+			\label{fig:batch_comparison}
+		\end{tikzfigure}
+
+		\vspace*{1em}
+
+		\begin{itemize}
+			\item Allthough our quasi-Newton's method may start learning faster than SGD, there comes a crossover point where SGD overtakes and continues to have better performance regardless of the batch size
+			      % \item Smaller batches have their crossover point in the first epoch due to the increased number of steps and so are not shown in \cref{fig:batch_comparison} to illustrate this effect.
+			\item We can conclude that the noise incurred due to batch training is not a root of the performance deficit.
+		\end{itemize}
+
+
+		% From \cref{fig:batch_comparison} we can see that, allthough our quasi-Newton's method may start learning faster than SGD, there comes a crossover point where SGD overtakes and continues to have better performance regardless of the batch size.
+
+		% Batch sizes less than 8192 have their crossover point in the first epoch due to the increased number of steps and so are not shown in \cref{fig:batch_comparison}.
+		% Thus, we can conclude that the noise incurred due to batch training is not a root of the performance deficit.
+
+		% \begin{tikzfigure}
+		% 	\includegraphics[width=\linewidth]{../NeurIPS2020/plots/all_losses_1.png}
+		% 	\captionof{figure}{Comparison of batch sizes for a small CNN (400 parameters) on MNIST.}
+		% 	\label{fig:batch_comparison}
+		% \end{tikzfigure}
+
+	}
+
+	\column{0.2}
+
+	\block[titlecenter]{Conclusions}{
+		\coloredbox{
+			We are currently investigating the different explanations of why this naive method offers no improvement.
+			Current ideas inculde
+
+			\begin{itemize}
+				\item The class vector subspace does not totally cover the top eigenvector subspace% and so there is still at least one high-curvature direction unconditioned. This would explain the inability to increase the learning rate.
+				\item The structure and non-convexity of the landscape is such that rapid gradient descent actually slows down the search.% That is, this method pushes the low-curvature dimensions into a flat region of similar loss, where there is less gradient information, before they can be optimised into a low-loss region, thus slowing down the overall optimisation.
+			\end{itemize}
+		}
+
+		Common experience is that, when done right, optimisation strategies that compensate for different curvatures in the loss landscape can lead to a significant speedup.
+
+		Despite the failure of our naive implementation, the recognition that there exists a relatively low-dimensional subspace of high curvature which can be identified relatively easily suggests that it may be possible to improve on current methods.
+
+	}
+
+
+	% \column{0.3}
+
+	% \block[titlecenter]{Discussion} {
+
+
+	% }
+
+	\block[titlecenter]{References}{
+		\small
+		% ToDo make sure this fills in all the citations and only lists the ones used
+		% \bibliography
+		\printbibliography[heading=none]
+		% \bibliographystyle{plainnat}
+		\vspace{0.19em}
+	}
+\end{columns}
+\end{document}

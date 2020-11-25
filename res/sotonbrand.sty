@@ -1,0 +1,346 @@
+\newif\ifblacktitle
+\newif\iflogofirst
+\logofirstfalse
+
+\definecolor{plainblack}{HTML}{231F20}
+\definecolor{richblack}{HTML}{00131D}
+\definecolor{neutral1}{HTML}{495961}
+\definecolor{neutral2}{HTML}{758D9A}
+\definecolor{neutral3}{HTML}{9FB1BD}
+\definecolor{neutral4}{HTML}{E1E8EC}
+\definecolor{marine1}{HTML}{005c84}
+\definecolor{marine2}{HTML}{74C9E5}
+\definecolor{marine3}{HTML}{3CBAC6}
+\definecolor{marine4}{HTML}{B3DBD2}
+\definecolor{marine5}{HTML}{4BB694}
+\definecolor{marine6}{HTML}{C1D100}
+\definecolor{horizon1}{HTML}{FCBC00}
+\definecolor{horizon2}{HTML}{EF7D00}
+\definecolor{horizon3}{HTML}{E73037}
+\definecolor{horizon4}{HTML}{D5007F}
+\definecolor{horizon5}{HTML}{8D3970}
+
+\newcommand{\sotonlogofirst}{
+	\logofirsttrue
+}
+
+\newcommand{\usesotonslide}[2]{
+	\defineblockstyle{SotonSlide}{
+		titlewidthscale=1, bodywidthscale=1, titleleft,
+		titleoffsetx=0pt, titleoffsety=0pt, bodyoffsetx=0pt, bodyoffsety=0pt,
+		bodyverticalshift=0pt, roundedcorners=0, linewidth=0pt, titleinnersep=1cm,
+		bodyinnersep=1cm
+	}{
+		\ifBlockHasTitle%
+		\draw[draw=none, left color=#1, right color=#2]
+		(blocktitle.south west) rectangle (blocktitle.north east);
+		\fi%
+		\draw[draw=none, fill=blockbodybgcolor] %
+		(blockbody.north west) [rounded corners=30] -- (blockbody.south west) --
+		(blockbody.south east) [rounded corners=0]-- (blockbody.north east) -- cycle;
+	}
+	\colorlet{blocktitlefgcolor}{white}
+	\useblockstyle{SotonSlide}
+}
+
+\defineblockstyle{Plain}{
+	titlewidthscale=1, bodywidthscale=1, titleleft,
+	titleoffsetx=0pt, titleoffsety=0pt, bodyoffsetx=0pt, bodyoffsety=0pt,
+	bodyverticalshift=0pt, roundedcorners=0pt, linewidth=0pt, titleinnersep=1cm,
+	bodyinnersep=1cm
+}{
+	\ifBlockHasTitle%
+	\fill[draw=none, fill=blocktitlebgcolor,]
+%	(blocktitle.south west) rectangle (blocktitle.north east);
+	(blocktitle.north west) [rounded corners=30] -- ([yshift=-1em]blocktitle.south west) -- 
+	([yshift=-1em]blocktitle.south east) [rounded corners=0]-- (blocktitle.north east) -- cycle;
+	\fi%
+	\draw[draw=none, fill=blockbodybgcolor,
+%	drop shadow={ 
+%		fill=black, 
+%		opacity=1,  
+%		shadow xshift=-.0mm,
+%		shadow yshift=.5mm, 
+%	}
+] %
+%	(blockbody.north east) [rounded corners=0] -- (blockbody.south east) [rounded corners=0] -- (blockbody.south west) -- (blockbody.north west) -- cycle;
+	(blockbody.north west) [rounded corners=30] -- (blockbody.south west) --
+	([xshift=1em]blockbody.south west) --
+	(blockbody.south east) [rounded corners=0]-- (blockbody.north east) -- cycle;
+%	\fill[draw=none, fill=blocktitlebgcolor,] 
+%	([yshift=0.1em]blocktitle.south west) -- ([yshift=-1.5em]blocktitle.south west) -- ([xshift=1.5em,yshift=0.1em]blocktitle.south west) -- cycle;
+}
+
+%\defineblockstyle{Backed}{
+%	titlewidthscale=1, bodywidthscale=1, titleleft,
+%	titleoffsetx=0pt, titleoffsety=0pt, bodyoffsetx=0pt, bodyoffsety=0pt,
+%	bodyverticalshift=0pt, roundedcorners=0pt, linewidth=0pt, titleinnersep=1cm,
+%	bodyinnersep=1cm
+%}{
+%	\ifBlockHasTitle%
+%	\fill[draw=none, fill=blocktitlebgcolor]
+%	%	(blocktitle.south west) rectangle (blocktitle.north east);
+%	(blocktitle.north west) [rounded corners=30] -- (blockbody.south west) -- 
+%	(blockbody.south east) [rounded corners=30]-- (blocktitle.north east) -- cycle;
+%	\fi%
+%	\draw[draw=none, fill=blockbodybgcolor]
+%	([xshift=0.em]blockbody.north west)  [rounded corners=0]--  
+%	([xshift=0.em,yshift=0.5em]blockbody.south west) [rounded corners=0]--
+%	([xshift=-0.em,yshift=0.5em]blockbody.south east) [rounded corners=0]-- 
+%	([xshift=-0.em]blockbody.north east) [rounded corners=0]-- cycle;
+%}
+
+\defineblockstyle{Backed}{
+	titlewidthscale=1, bodywidthscale=1, titleleft,
+	titleoffsetx=0pt, titleoffsety=0pt, bodyoffsetx=0pt, bodyoffsety=0pt,
+	bodyverticalshift=0pt, roundedcorners=0pt, linewidth=0pt, titleinnersep=1cm,
+	bodyinnersep=1cm
+}{
+	\ifBlockHasTitle%
+	\fill[draw=none, fill=blocktitlebgcolor]
+	%	(blocktitle.south west) rectangle (blocktitle.north east);
+	(blocktitle.north west) [rounded corners=30] -- 
+	(blockbody.south west) -- 
+	(blockbody.south east) [rounded corners=0]-- 
+	(blocktitle.north east) -- cycle;
+	\fi%
+	\draw[draw=none, fill=blockbodybgcolor]
+	([xshift=0.em]blockbody.north west)  [rounded corners=30]--  
+	([xshift=0.em,yshift=0.5em]blockbody.south west) [rounded corners=30]--
+	([xshift=-0.em,yshift=0.5em]blockbody.south east) [rounded corners=0]-- 
+	([xshift=-0.em]blockbody.north east) [rounded corners=0]-- cycle;
+}
+
+\defineblockstyle{Detached}{
+	titlewidthscale=1, bodywidthscale=1, titleleft,
+	titleoffsetx=0pt, titleoffsety=0pt, bodyoffsetx=0pt, bodyoffsety=0pt,
+	bodyverticalshift=0pt, roundedcorners=0pt, linewidth=0pt, titleinnersep=1cm,
+	bodyinnersep=1cm
+}{
+	\ifBlockHasTitle%
+	\fill[draw=none, fill=blocktitlebgcolor]
+%		(blocktitle.south west) rectangle (blocktitle.north east);
+	(blocktitle.north west) [rounded corners=0] -- 
+	(blocktitle.south west) -- 
+	(blocktitle.south east) [rounded corners=0]-- 
+	(blocktitle.north east) -- cycle;
+	\fi%
+	\draw[draw=none, fill=blockbodybgcolor]
+	([yshift=-0.5em]blockbody.north west)  [rounded corners=0]--  
+	([xshift=0.em,yshift=0.em]blockbody.south west) [rounded corners=0]--
+	([xshift=-0.em,yshift=0.em]blockbody.south east) [rounded corners=0]-- 
+	([yshift=-0.5em]blockbody.north east) [rounded corners=0]-- cycle;
+}
+
+\defineinnerblockstyle{wireblock}
+{
+	titlewidthscale=0.9, bodywidthscale=1,titleleft,
+	titleoffsetx=0pt, titleoffsety=0.5em, bodyoffsetx=0mm, bodyoffsety=15mm,
+	bodyverticalshift=10mm, roundedcorners=0, linewidth=2pt,
+	titleinnersep=6mm, bodyinnersep=1cm}
+{	
+	\ifInnerblockHasTitle%
+	\fill[draw=none, fill=innerblockbodybgcolor]
+	%		(blocktitle.south west) rectangle (blocktitle.north east);
+	(innerblockbody.north west) -- 
+	(innerblockbody.south west) -- 
+	(innerblockbody.south east) -- 
+	(innerblockbody.north east)-- 
+	cycle;
+	\draw[] 
+	(innerblocktitle.west) --
+	(innerblockbody.north west) -- 
+	(innerblockbody.south west) -- 
+	(innerblockbody.south east) -- 
+	(innerblockbody.north east)--  
+	([xshift=-2em]innerblocktitle.east);
+	\else
+	\fill[draw=black, fill=innerblockbodybgcolor]
+	(innerblockbody.north west) -- 
+	(innerblockbody.south west) -- 
+	(innerblockbody.south east) -- 
+	(innerblockbody.north east) -- 
+	cycle;
+	\fi%
+}
+
+\defineinnerblockstyle{lightblock}
+{
+	titlewidthscale=1, bodywidthscale=1,titleleft,
+	titleoffsetx=0pt, titleoffsety=-0.5em, bodyoffsetx=0mm, bodyoffsety=15mm,
+	bodyverticalshift=10mm, roundedcorners=5, linewidth=2pt,
+	titleinnersep=6mm, bodyinnersep=1cm}
+{	
+	\fill[draw=none, fill=innerblockbodybgcolor]
+	%		(blocktitle.south west) rectangle (blocktitle.north east);
+	(innerblockbody.north west) -- 
+	(innerblockbody.south west) -- 
+	(innerblockbody.south east) -- 
+	(innerblockbody.north east)-- 
+	cycle;
+}
+
+\defineblockstyle{Refs}{
+	titlewidthscale=1, bodywidthscale=1, titleleft,
+	titleoffsetx=0pt, titleoffsety=0pt, bodyoffsetx=0pt, bodyoffsety=0pt,
+	bodyverticalshift=0pt, roundedcorners=0pt, linewidth=0pt, titleinnersep=1cm,
+	bodyinnersep=1cm
+}{
+	\fill[draw=none, fill=blocktitlebgcolor]
+	%	(blocktitle.south west) rectangle (blocktitle.north east);
+	([yshift=0.5em]blockbody.north west) [rounded corners=30] -- (blockbody.south west) -- 
+	(blockbody.south east) [rounded corners=30]-- ([yshift=0.5em]blockbody.north east) -- cycle;
+	\draw[draw=none, fill=blockbodybgcolor]
+	([xshift=0.em]blockbody.north west)  [rounded corners=30]--  
+	([xshift=0.em,yshift=0.5em]blockbody.south west) [rounded corners=30]--
+	([xshift=-0.em,yshift=0.5em]blockbody.south east) [rounded corners=30]-- 
+	([xshift=-0.em]blockbody.north east) [rounded corners=30]-- cycle;
+}
+
+\definetitlestyle{FilledSwap}{
+	width=\paperwidth, roundedcorners=0, linewidth=2pt, innersep=1.5cm,
+	titletotopverticalspace=0mm, titletoblockverticalspace=20mm,
+	titlegraphictotitledistance=10pt,
+}{
+%	\shade[draw=none, left color=titlebgcolor, right color=titlebgcolor]
+%	(\titleposleft + 11.9\titleinnersep,\titleposbottom) rectangle (\titleposright - 11.9\titleinnersep,\titleposbottom - \titlelinewidth); 
+%	\shade[draw=none, left color=backgroundcolor, right color=titlebgcolor]
+%	(\titleposleft + 2\titleinnersep,\titleposbottom) rectangle (\titleposleft + 12\titleinnersep,\titleposbottom - \titlelinewidth);
+%	\shade[draw=none, right color=backgroundcolor, left color=titlebgcolor]
+%	(\titleposright - 12\titleinnersep,\titleposbottom) rectangle (\titleposright - 2\titleinnersep,\titleposbottom - \titlelinewidth);
+}
+
+\definetitlestyle{SotonTitleFade}{
+	width=\paperwidth, roundedcorners=0, linewidth=0pt, innersep=1.5cm,
+	titletotopverticalspace=0mm, titletoblockverticalspace=20mm,
+	titlegraphictotitledistance=10pt
+}{
+	\shade[draw=none, top color=titlebgcolor, bottom color=titlebgcolor!70!]
+	(\titleposleft,\titleposbottom) rectangle (\titleposright,\titlepostop); %
+}
+
+\definetitlestyle{FadeTitle}{
+	width=\paperwidth, roundedcorners=0, linewidth=0pt, innersep=1.5cm,
+	titletotopverticalspace=0mm, titletoblockverticalspace=20mm,
+	titlegraphictotitledistance=10pt
+}{
+	\draw[draw=none, fill=titlebgcolor]%
+	(\titleposleft,\titleposbottom) rectangle (\titleposright,\titlepostop); %
+	\shade[draw=none, top color=titlebgcolor!95!, bottom color=backgroundcolor]
+	(\titleposleft,\titleposbottom + 0.1\titleinnersep) rectangle (\titleposright,\titleposbottom - 0.5\titleinnersep); 
+}
+
+\definecolorstyle{SotonBrandStyle}{}{
+	% Background Colors
+	\colorlet{backgroundcolor}{neutral4}
+	\colorlet{framecolor}{plainblack}
+	% Title Colors
+	\colorlet{titlefgcolor}{white}
+	\colorlet{titlebgcolor}{marine1}
+	% Block Colors
+	\colorlet{blocktitlebgcolor}{marine1}
+	\colorlet{blocktitlefgcolor}{plainblack}
+	\colorlet{blockbodybgcolor}{white}
+	\colorlet{blockbodyfgcolor}{plainblack}
+	% Innerblock Colors
+	\colorlet{innerblocktitlebgcolor}{white}
+	\colorlet{innerblocktitlefgcolor}{plainblack}
+	\colorlet{innerblockbodybgcolor}{neutral4}
+	\colorlet{innerblockbodyfgcolor}{plainblack}
+	% Note colors
+	\colorlet{notefgcolor}{plainblack}
+	\colorlet{notebgcolor}{neutral4}
+	\colorlet{notefrcolor}{neutral4}
+}
+
+\definelayouttheme{Soton}{
+	\blacktitlefalse
+	\titlegraphic{\includegraphics[width=\linewidth]{res/logowhite}}
+	\usecolorstyle[]{SotonBrandStyle}
+	\usebackgroundstyle{Default}
+	\usetitlestyle{Filled}
+	\usesotonslide{marine1}{marine1!70!white}
+	\useinnerblockstyle{Table}
+	\usenotestyle{Default}
+}
+
+\definelayouttheme{SotonFade}{
+	\blacktitlefalse
+	\titlegraphic{\includegraphics[width=\linewidth]{res/logowhite}}
+	\usecolorstyle[]{SotonBrandStyle}
+	\usebackgroundstyle{Default}
+	\usetitlestyle{SotonTitleFade}
+	\useblockstyle{Underline}
+	\useinnerblockstyle{Table}
+	\usenotestyle{Default}
+}
+
+\definelayouttheme{SotonPlain}{
+	\blacktitletrue
+	\titlegraphic{\includegraphics[width=\linewidth]{res/logoblue}}
+	\usecolorstyle[]{SotonBrandStyle}
+	\usebackgroundstyle{Default}
+	\usetitlestyle{FilledSwap}
+	\colorlet{blocktitlefgcolor}{white}
+	\useblockstyle{Plain}
+	\useinnerblockstyle{Table}
+	\usenotestyle{Default}
+}
+
+\definelayouttheme{SotonBacked}{
+	\blacktitletrue
+	\titlegraphic{\includegraphics[width=\linewidth]{res/logoblue}}
+	\usecolorstyle[]{SotonBrandStyle}
+	\usebackgroundstyle{Default}
+	\usetitlestyle{FilledSwap}
+	\colorlet{blocktitlefgcolor}{white}
+	\useblockstyle{Detached}
+	\useinnerblockstyle{Table}
+	\usenotestyle{Default}
+}
+
+\ifthenelse{\paperwidth < \paperheight}{
+	\newcommand{\sotonlogowidth}{0.34\paperwidth}
+}{
+	\newcommand{\sotonlogowidth}{0.34\paperheight}
+}
+
+\makeatletter
+\renewcommand\TP@maketitle{%
+	\hspace*{2cm}
+	\iflogofirst
+	\begin{minipage}{\sotonlogowidth}
+		\centering
+		\@titlegraphic
+	\end{minipage}
+	\begin{minipage}{\linewidth - 4cm - \sotonlogowidth}
+		\raggedleft
+		\ifblacktitle \color{plainblack} \else \color{titlefgcolor} \fi
+		{\bfseries \Huge \sc \@title \par}
+		\vspace*{1em}
+		{\huge \@author \par}
+		\vspace*{1em}
+		{\LARGE \@institute}
+	\end{minipage}
+	\else
+	\begin{minipage}{\linewidth - 4cm - \sotonlogowidth}
+		\raggedright
+		\ifblacktitle \color{plainblack} \else \color{titlefgcolor} \fi
+		{\bfseries \Huge \sc \@title \par}
+		\vspace*{1em}
+		{\huge \@author \par}
+		\vspace*{1em}
+		{\LARGE \@institute}
+	\end{minipage}%
+	\begin{minipage}{\sotonlogowidth}
+		\centering
+		\vspace*{5em}
+		\@titlegraphic
+	\end{minipage}
+	\fi
+	\vspace*{-1cm}
+	% \begin{minipage}{1.5cm}
+	% \end{minipage}
+}
+\makeatother
+

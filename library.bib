@@ -1,0 +1,311 @@
+@article{BenaychGeorges2011,
+  abstract  = {We consider the eigenvalues and eigenvectors of finite, low rank perturbations of random matrices. Specifically, we prove almost sure convergence of the extreme eigenvalues and appropriate projections of the corresponding eigenvectors of the perturbed matrix for additive and multiplicative perturbation models. The limiting non-random value is shown to depend explicitly on the limiting eigenvalue distribution of the unperturbed random matrix and the assumed perturbation model via integral transforms that correspond to very well-known objects in free probability theory that linearize non-commutative free additive and multiplicative convolution. Furthermore, we uncover a phase transition phenomenon whereby the large matrix limit of the extreme eigenvalues of the perturbed matrix differs from that of the original matrix if and only if the eigenvalues of the perturbing matrix are above a certain critical threshold. Square root decay of the eigenvalue density at the edge is sufficient to ensure that this threshold is finite. This critical threshold is intimately related to the same aforementioned integral transforms and our proof techniques bring this connection and the origin of the phase transition into focus. Consequently, our results extend the class of 'spiked' random matrix models about which such predictions (called the BBP phase transition) can be made well beyond the Wigner, Wishart and Jacobi random ensembles found in the literature. We examine the impact of this eigenvalue phase transition on the associated eigenvectors and observe an analogous phase transition in the eigenvectors. Various extensions of our results to the problem of non-extreme eigenvalues are discussed. © 2011 Elsevier Inc.},
+  author    = {Florent Benaych-Georges and Raj Rao Nadakuditi},
+  doi       = {10.1016/j.aim.2011.02.007},
+  issn      = {10902082},
+  issue     = {1},
+  journal   = {Advances in Mathematics},
+  keywords  = {Free probability,Haar measure,Informational limit,Phase transition,Principal components analysis,Random eigenvalues,Random matrices,Random perturbation,Randomeigenvectors,Sample covariance matrices},
+  month     = {5},
+  pages     = {494-521},
+  publisher = {Academic Press Inc.},
+  title     = {The eigenvalues and eigenvectors of finite, low rank perturbations of large random matrices},
+  volume    = {227},
+  year      = {2011}
+}
+@article{Coleman2017,
+  title   = {Dawnbench: An end-to-end deep learning benchmark and competition},
+  author  = {Coleman, Cody and Narayanan, Deepak and Kang, Daniel and Zhao, Tian and Zhang, Jian and Nardi, Luigi and Bailis, Peter and Olukotun, Kunle and R{\'e}, Chris and Zaharia, Matei},
+  journal = {Training},
+  volume  = {100},
+  number  = {101},
+  pages   = {102},
+  year    = {2017}
+}
+@inproceedings{Dauphin2014,
+  abstract  = {A central challenge to many fields of science and engineering involves minimizing non-convex error functions over continuous, high dimensional spaces. Gradient descent or quasi-Newton methods are almost ubiquitously used to perform such minimizations, and it is often thought that a main source of difficulty for these local methods to find the global minimum is the proliferation of local minima with much higher error than the global minimum. Here we argue, based on results from statistical physics, random matrix theory, neural network theory, and empirical evidence, that a deeper and more profound difficulty originates from the proliferation of saddle points, not local minima, especially in high dimensional problems of practical interest. Such saddle points are surrounded by high error plateaus that can dramatically slow down learning, and give the illusory impression of the existence of a local minimum. Motivated by these arguments, we propose a new approach to second-order optimization, the saddle-free Newton method, that can rapidly escape high dimensional saddle points, unlike gradient descent and quasi-Newton methods. We apply this algorithm to deep or recurrent neural network training, and provide numerical evidence for its superior optimization performance. This work extends the results of Pascanu et al. (2014).},
+  author    = {Yann N Dauphin and Razvan Pascanu and Caglar Gulcehre and Kyunghyun Cho and Surya Ganguli and Yoshua Bengio},
+  title     = {Identifying and attacking the saddle point problem in high-dimensional non-convex optimization},
+  year      = {2014},
+  booktitle = {Advances in neural information processing systems},
+  pages     = {2933--2941}
+}
+@article{Yao2020,
+  title   = {ADAHESSIAN: An Adaptive Second Order Optimizer for Machine Learning},
+  author  = {Yao, Zhewei and Gholami, Amir and Shen, Sheng and Keutzer, Kurt and Mahoney, Michael W},
+  journal = {arXiv preprint arXiv:2006.00719},
+  year    = {2020}
+}
+@article{GurAri2018,
+  abstract = {We show that in a variety of large-scale deep learning scenarios the gradient dynamically converges to a very small subspace after a short period of training. The subspace is spanned by a few top eigenvectors of the Hessian (equal to the number of classes in the dataset), and is mostly preserved over long periods of training. A simple argument then suggests that gradient descent may happen mostly in this subspace. We give an example of this effect in a solvable model of classification, and we comment on possible implications for optimization and learning.},
+  author   = {Guy Gur-Ari and Daniel A Roberts and Ethan Dyer},
+  journal  = {arXiv preprint arXiv:1812.04754},
+  title    = {Gradient descent happens in a tiny subspace},
+  url      = {http://arxiv.org/abs/1812.04754},
+  year     = {2018}
+}
+@article{Garipov2018,
+  abstract = {The loss functions of deep neural networks are complex and their geometric properties are not well understood. We show that the optima of these complex loss functions are in fact connected by simple curves over which training and test accuracy are nearly constant. We introduce a training procedure to discover these high-accuracy pathways between modes. Inspired by this new geometric insight, we also propose a new ensembling method entitled Fast Geometric Ensembling (FGE). Using FGE we can train high-performing ensembles in the time required to train a single model. We achieve improved performance compared to the recent state-of-the-art Snapshot Ensembles, on CIFAR-10, CIFAR-100, and ImageNet.},
+  author   = {Timur Garipov and Pavel Izmailov and Dmitrii Podoprikhin and Dmitry Vetrov and Andrew Gordon Wilson},
+  month    = {2},
+  title    = {Loss Surfaces, Mode Connectivity, and Fast Ensembling of DNNs},
+  url      = {http://arxiv.org/abs/1802.10026},
+  year     = {2018}
+}
+@article{Nguyen2019,
+  abstract = {Stochastic gradient descent (SGD) has been widely used in machine learning due to its computational efficiency and favorable generalization properties. Recently, it has been empirically demonstrated that the gradient noise in several deep learning settings admits a non-Gaussian, heavy-tailed behavior. This suggests that the gradient noise can be modeled by using $\alpha$-stable distributions, a family of heavy-tailed distributions that appear in the generalized central limit theorem. In this context, SGD can be viewed as a discretization of a stochastic differential equation (SDE) driven by a L\'\{e\}vy motion, and the metastability results for this SDE can then be used for illuminating the behavior of SGD, especially in terms of `preferring wide minima'. While this approach brings a new perspective for analyzing SGD, it is limited in the sense that, due to the time discretization, SGD might admit a significantly different behavior than its continuous-time limit. Intuitively, the behaviors of these two systems are expected to be similar to each other only when the discretization step is sufficiently small; however, to the best of our knowledge, there is no theoretical understanding on how small the step-size should be chosen in order to guarantee that the discretized system inherits the properties of the continuous-time system. In this study, we provide formal theoretical analysis where we derive explicit conditions for the step-size such that the metastability behavior of the discrete-time system is similar to its continuous-time limit. We show that the behaviors of the two systems are indeed similar for small step-sizes and we identify how the error depends on the algorithm and problem parameters. We illustrate our results with simulations on a synthetic model and neural networks.},
+  author   = {Thanh Huy Nguyen and Umut Şimşekli and Mert Gürbüzbalaban and Gaël Richard},
+  month    = {6},
+  title    = {First Exit Time Analysis of Stochastic Gradient Descent Under Heavy-Tailed Gradient Noise},
+  url      = {http://arxiv.org/abs/1906.09069},
+  year     = {2019}
+}
+@article{Draxler2018,
+  abstract = {Training neural networks involves finding minima of a high-dimensional non-convex loss function. Knowledge of the structure of this energy landscape is sparse. Relaxing from linear interpolations, we construct continuous paths between minima of recent neural network architectures on CIFAR10 and CIFAR100. Surprisingly, the paths are essentially flat in both the training and test landscapes. This implies that neural networks have enough capacity for structural changes, or that these changes are small between minima. Also, each minimum has at least one vanishing Hessian eigenvalue in addition to those resulting from trivial invariance.},
+  author   = {Felix Draxler and Kambis Veschgini and Manfred Salmhofer and Fred A. Hamprecht},
+  month    = {3},
+  title    = {Essentially No Barriers in Neural Network Energy Landscape},
+  url      = {http://arxiv.org/abs/1803.00885},
+  year     = {2018}
+}
+@article{Masters2018,
+  abstract = {Modern deep neural network training is typically based on mini-batch stochastic gradient optimization. While the use of large mini-batches increases the available computational parallelism, small batch training has been shown to provide improved generalization performance and allows a significantly smaller memory footprint, which might also be exploited to improve machine throughput. In this paper, we review common assumptions on learning rate scaling and training duration, as a basis for an experimental comparison of test performance for different mini-batch sizes. We adopt a learning rate that corresponds to a constant average weight update per gradient calculation (i.e., per unit cost of computation), and point out that this results in a variance of the weight updates that increases linearly with the mini-batch size $m$. The collected experimental results for the CIFAR-10, CIFAR-100 and ImageNet datasets show that increasing the mini-batch size progressively reduces the range of learning rates that provide stable convergence and acceptable test performance. On the other hand, small mini-batch sizes provide more up-to-date gradient calculations, which yields more stable and reliable training. The best performance has been consistently obtained for mini-batch sizes between $m = 2$ and $m = 32$, which contrasts with recent work advocating the use of mini-batch sizes in the thousands.},
+  author   = {Dominic Masters and Carlo Luschi},
+  month    = {4},
+  title    = {Revisiting Small Batch Training for Deep Neural Networks},
+  url      = {http://arxiv.org/abs/1804.07612},
+  year     = {2018}
+}
+@article{Duda2019,
+  abstract = {In stochastic gradient descent, especially for neural network training, there are currently dominating first order methods: not modeling local distance to minimum. This information required for optimal step size is provided by second order methods, however, they have many difficulties, starting with full Hessian having square of dimension number of coefficients. This article proposes a minimal step from successful first order momentum method toward second order: online parabola modelling in just a single direction: normalized $\hat\{v\}$ from momentum method. It is done by estimating linear trend of gradients $\vec\{g\}=\nabla F(\vec\{\theta\})$ in $\hat\{v\}$ direction: such that $g(\vec\{\theta\}_\bot+\theta\hat\{v\})\approx \lambda (\theta -p)$ for $\theta = \vec\{\theta\}\cdot \hat\{v\}$, $g= \vec\{g\}\cdot \hat\{v\}$, $\vec\{\theta\}_\bot=\vec\{\theta\}-\theta\hat\{v\}$. Using linear regression, $\lambda$, $p$ are MSE estimated by just updating four averages (of $g$, $\theta$, $g\theta$, $\theta^2$) in the considered direction. Exponential moving averages allow here for inexpensive online estimation, weakening contribution of the old gradients. Controlling sign of curvature $\lambda$, we can repel from saddles in contrast to attraction in standard Newton method. In the remaining directions: not considered in second order model, we can simultaneously perform e.g. gradient descent. There is also discussed its learning rate approximation as $\mu=\sigma_\theta / \sigma_g$, allowing e.g. for adaptive SGD - with learning rate separately optimized (2nd order) for each parameter.},
+  author   = {Jarek Duda},
+  keywords = {Hessian,convergence,deep learning,linear regres-sion,non-convex optimization,saddle-free Newton method,stochastic gradient descent},
+  month    = {7},
+  title    = {SGD momentum optimizer with step estimation by online parabola model},
+  url      = {http://arxiv.org/abs/1907.07063},
+  year     = {2019}
+}
+@article{Dogra2020,
+  abstract = {Koopman operator theory, a powerful framework for discovering the underlying dynamics of nonlinear dynamical systems, was recently shown to be intimately connected with neural network training. In this work, we take the first steps in making use of this connection. As Koopman operator theory is a linear theory, a successful implementation of it in evolving network weights and biases offers the promise of accelerated training, especially in the context of deep networks, where optimization is inherently a non-convex problem. We show that Koopman operator theory methods allow for accurate predictions of the weights and biases of a feedforward, fully connected deep network over a non-trivial range of training time. During this time window, we find that our approach is at least 10x faster than gradient descent based methods, in line with the results expected from our complexity analysis. We highlight additional methods by which our results can be expanded to broader classes of networks and larger time intervals, which shall be the focus of future work in this novel intersection between dynamical systems and neural network theory.},
+  author   = {Akshunna S. Dogra and William T Redman},
+  month    = {6},
+  title    = {Optimizing Neural Networks via Koopman Operator Theory},
+  url      = {http://arxiv.org/abs/2006.02361},
+  year     = {2020}
+}
+@article{Granziol2020,
+  abstract = {We study the effect of mini-batching on the loss landscape of deep neural networks using spiked, field-dependent random matrix theory. We show that the magnitude of the extremal values of the batch Hessian are larger than those of the empirical Hessian. Our framework yields an analytical expression for the maximal SGD learning rate as a function of batch size, informing practical optimisation schemes. We use this framework to demonstrate that accepted and empirically-proven schemes for adapting the learning rate emerge as special cases of our more general framework. For stochastic second order methods and adaptive methods, we derive that the minimal damping coefficient is proportional to the ratio of the learning rate to batch size. For adaptive methods, we show that for the typical setup of small learning rate and small damping, square root learning rate scalings with increasing batch-size should be employed. We validate our claims on the VGG/WideResNet architectures on the CIFAR-$100$ and ImageNet datasets.},
+  author   = {Diego Granziol},
+  month    = {6},
+  title    = {Curvature is Key: Sub-Sampled Loss Surfaces and the Implications for Large Batch Training},
+  url      = {http://arxiv.org/abs/2006.09092},
+  year     = {2020}
+}
+@article{Lewkowycz2020,
+  abstract = {We study the role of $L_2$ regularization in deep learning, and uncover simple relations between the performance of the model, the $L_2$ coefficient, the learning rate, and the number of training steps. These empirical relations hold when the network is overparameterized. They can be used to predict the optimal regularization parameter of a given model. In addition, based on these observations we propose a dynamical schedule for the regularization parameter that improves performance and speeds up training. We test these proposals in modern image classification settings. Finally, we show that these empirical relations can be understood theoretically in the context of infinitely wide networks. We derive the gradient flow dynamics of such networks, and compare the role of $L_2$ regularization in this context with that of linear models.},
+  author   = {Aitor Lewkowycz and Guy Gur-Ari},
+  month    = {6},
+  title    = {On the training dynamics of deep networks with $L_2$ regularization},
+  url      = {http://arxiv.org/abs/2006.08643},
+  year     = {2020}
+}
+@article{Kopitkov2019,
+  abstract = {Expressiveness and generalization of deep models was recently addressed via the connection between neural networks (NNs) and kernel learning, where first-order dynamics of NN during a gradient-descent (GD) optimization were related to gradient similarity kernel, also known as Neural Tangent Kernel (NTK). In the majority of works this kernel is considered to be time-invariant, with its properties being defined entirely by NN architecture and independent of the learning task at hand. In contrast, in this paper we empirically explore these properties along the optimization and show that in practical applications the NTK changes in a very dramatic and meaningful way, with its top eigenfunctions aligning toward the target function learned by NN. Moreover, these top eigenfunctions serve as basis functions for NN output - a function represented by NN is spanned almost completely by them for the entire optimization process. Further, since the learning along top eigenfunctions is typically fast, their alignment with the target function improves the overall optimization performance. In addition, we study how the neural spectrum is affected by learning rate decay, typically done by practitioners, showing various trends in the kernel behavior. We argue that the presented phenomena may lead to a more complete theoretical understanding behind NN learning.},
+  author   = {Dmitry Kopitkov and Vadim Indelman},
+  month    = {10},
+  title    = {Neural Spectrum Alignment: Empirical Study},
+  url      = {http://arxiv.org/abs/1910.08720},
+  year     = {2019}
+}
+@report{Gallier2019,
+  author = {Jean Gallier and Jocelyn Quaintance},
+  title  = {Algebra, Topology, Differential Calculus, and Optimization Theory For Computer Science and Machine Learning},
+  year   = {2019}
+}
+@book{Boyd2004,
+  abstract  = {From the publisher. Convex optimization problems arise frequently in many different fields. This book provides a comprehensive introduction to the subject, and shows in detail how such problems can be solved numerically with great efficiency. The book begins with the basic elements of convex sets and functions, and then describes various classes of convex optimization problems. Duality and approximation techniques are then covered, as are statistical estimation techniques. Various geometrical problems are then presented, and there is detailed discussion of unconstrained and constrained minimization problems, and interior-point methods. The focus of the book is on recognizing convex optimization problems and then finding the most appropriate technique for solving them. It contains many worked examples and homework exercises and will appeal to students, researchers and practitioners in fields such as engineering, computer science, mathematics, statistics, finance, and economics. Introduction -- Convex sets -- Convex functions -- Convex optimization problems -- Duality -- Approximation and fitting -- Statistical estimation -- Geometric problems -- Unconstrained minimization -- Equality constrained minimization -- Interior-point methods -- Appendices: A. Mathematical background -- B. Problems involving two quadratic functions -- C. Numerical linear algebra background.},
+  author    = {Stephen P. Boyd and Lieven. Vandenberghe},
+  isbn      = {9780521833783},
+  pages     = {716},
+  publisher = {Cambridge University Press},
+  title     = {Convex optimization},
+  year      = {2004}
+}
+@book{MacKay2003,
+  abstract  = {1. Introduction to information theory -- 2. Probability, entropy, and inference -- 3. More about inference -- Part I. Data compression. 4. The source coding theorem -- 5. Symbol codes -- 6. Stream codes -- 7. Codes for integers -- Part II. Noisy-channel coding. 8. Correlated random variables -- 9. Communication over a noisy channel -- 10. The noisy-channel coding theorem -- 11. Error-correcting codes and real channels -- Part III. Further topics in information theory. 12. Hash codes: codes for efficient information retrieval -- 13. Binary codes -- 14. Very good linear codes exist -- 15. Further exercises on information theory -- 16. Message passing -- 17. Communication over constrained noiseless channels -- 18. An aside: crosswords and codebreaking -- 19. Why have sex? Information acquisition and evolution -- Part IV. Probabilities and inference. 20. An example inference task: clustering -- 21. Exact inference by complete enumeration -- 22. Maximum likelihood and clustering -- 23. Useful probability distributions -- 24. Exact marginalization -- 25. Exact marginalization in trellises -- 26. Exact marginalization in graphs -- 27. Laplace's method -- 28. Model comparison and Occam's razor -- 29. Monte Carlo methods -- 30. Efficient Monte Carlo methods -- 31. Ising models -- 32. Exact Monte Carlo sampling -- 33. Variational methods -- 34. Independent component analysis and latent variable modelling -- 35. Random inference topics -- 36. Decision theory -- 37. Bayesian inference and sampling theory -- Part V. Neural networks. 38. Introduction to neural networks -- 39. The single neuron as a classifier -- 40. Capacity of a single neuron -- 41. Learning as inference -- 42. Hopfield networks -- 43. Boltzmann machines -- 44. Supervised learning in multilayer networks -- 45. Gaussian processes -- 46. Deconvolution -- Part VI. Sparse graph codes. 47. Low-density parity-check codes -- 48. Convolutional codes and turbo codes -- 49. Repeat-accumulate codes -- 50. Digital fountain codes -- Part VII. Appendices. A. Notation -- B. Some physics -- C. Some mathematics.},
+  author    = {David J. C. MacKay},
+  isbn      = {0521642981},
+  pages     = {628},
+  publisher = {Cambridge University Press},
+  title     = {Information theory, inference, and learning algorithms},
+  year      = {2003}
+}
+@report{Barber2007,
+  author = {David Barber},
+  title  = {Bayesian Reasoning and Machine Learning},
+  year   = {2007}
+}
+@book{Geisser2006,
+  abstract  = {A fascinating investigation into the foundations of statistical inferenceThis publication examines the distinct philosophical foundations of different statistical modes of parametric inference. Unlike many other texts that focus on methodology and applications, this book focuses on a rather unique combination of theoretical and foundational aspects that underlie the field of statistical inference. Modes of Parametric Statistical Inference; Contents; Foreword; Preface; 1. A Forerunner; 2. Frequentist Analysis; 3. Likelihood; 4. Testing Hypotheses; 5. Unbiased and Invariant Tests; 6. Elements of Bayesianism; 7. Theories of Estimation; 8. Set and Interval Estimation; References; Index.},
+  author    = {Seymour. Geisser and Wesley O. Johnson},
+  isbn      = {0471667269},
+  pages     = {192},
+  publisher = {Wiley-Interscience},
+  title     = {Modes of parametric statistical inference},
+  year      = {2006}
+}
+@article{Jain2017,
+  abstract  = {A vast majority of machine learning algorithms train their models and perform inference by solving optimization problems. In order to capture the learning and prediction problems accurately structural constraints such as sparsity or low rank are frequently imposed or else the objective itself is designed to be a non-convex function. This is especially true of algorithms that operate in high-dimensional spaces or that train non-linear models such as tensor models and deep networks. The freedom to express the learning problem as a non-convex optimization problem gives immense modeling power to the algorithm designer, but often such problems are NP-hard to solve. A popular workaround to this has been to relax non-convex problems to convex ones and use traditional methods to solve the (convex) relaxed optimization problems. However this approach may be lossy and nevertheless presents significant challenges for large scale optimization. On the other hand, direct approaches to non-convex optimization have met with resounding success in several domains and remain the methods of choice for the practitioner, as they frequently outperform relaxation-based techniques - popular heuristics include projected gradient descent and alternating minimization. However, these are often poorly understood in terms of their convergence and other properties. This monograph presents a selection of recent advances that bridge a long-standing gap in our understanding of these heuristics. We hope that an insight into the inner workings of these methods will allow the reader to appreciate the unique marriage of task structure and generative models that allow these heuristic techniques to (provably) succeed. The monograph will lead the reader through several widely used non-convex optimization techniques, as well as applications thereof. The goal of this monograph is to both, introduce the rich literature in this area, as well as equip the reader with the tools and techniques needed to analyze these simple procedures for non-convex problems.},
+  author    = {Prateek Jain and Purushottam Kar},
+  doi       = {10.1561/2200000058},
+  issn      = {19358245},
+  issue     = {3-4},
+  journal   = {Foundations and Trends in Machine Learning},
+  pages     = {142-336},
+  publisher = {Now Publishers Inc},
+  title     = {Non-convex optimization for machine learning},
+  volume    = {10},
+  year      = {2017}
+}
+@book{Murphy2012,
+  abstract  = {"This textbook offers a comprehensive and self-contained introduction to the field of machine learning, based on a unified, probabilistic approach. The coverage combines breadth and depth, offering necessary background material on such topics as probability, optimization, and linear algebra as well as discussion of recent developments in the field, including conditional random fields, L1 regularization, and deep learning. The book is written in an informal, accessible style, complete with pseudo-code for the most important algorithms. All topics are copiously illustrated with color images and worked examples drawn from such application domains as biology, text processing, computer vision, and robotics. Rather than providing a cookbook of different heuristic methods, the book stresses a principled model-based approach, often using the language of graphical models to specify models in a concise and intuitive way. Almost all the models described have been implemented in a MATLAB software package--PMTK (probabilistic modeling toolkit)--that is freely available online"--Back cover. Contents -- Preface -- 1 Introduction -- 2 Probability -- 3 Generative Models for Discrete Data -- 4 Gaussian Models -- 5 Bayesian Statistics -- 6 Frequentist Statistics -- 7 Linear Regression -- 8 Logistic Regression -- 9 Generalized Linear Models and the Exponential Family -- 10 Directed Graphical Models (Bayes Nets) -- 11 Mixture Models and the EM Algorithm -- 12 Latent Linear Models -- 13 Sparse Linear Models -- 14 Kernels -- 15 Gaussian Processes -- 16 Adaptive Basis Function Models -- 17 Markov and Hidden Markov Models -- 18 State Space Models 19 Undirected Graphical Models (Markov Random Fields)20 Exact Inference for Graphical Models -- 21 Variational Inference -- 22 More Variational Inference -- 23 Monte Carlo Inference -- 24 Markov Chain Monte Carlo (MCMC) Inference -- 25 Clustering -- 26 Graphical Model Structure Learning -- 27 Latent Variable Models for Discrete Data -- 28 Deep Learning -- Notation -- Bibliography -- Index to Code -- Index to Keywords},
+  author    = {Kevin P. Murphy},
+  isbn      = {9780262018029},
+  pages     = {1067},
+  publisher = {MIT Press},
+  title     = {Machine learning : a probabilistic perspective},
+  year      = {2012}
+}
+@report{Downey2012,
+  author = {Allen B Downey},
+  title  = {Think Bayes Bayesian Statistics Made Simple},
+  year   = {2012}
+}
+@article{Ghorbani2019,
+  abstract  = {To understand the dynamics of optimization in deep neural networks, we develop a tool to study the evolution of the entire Hessian spectrum throughout the optimization process. Using this, we study a number of hypotheses concerning smoothness, curvature, and sharpness in the deep learning literature. We then thoroughly analyze a crucial structural feature of the spectra: in non-batch normalized networks, we observe the rapid appearance of large isolated eigenvalues in the spectrum, along with a surprising concentration of the gradient in the corresponding eigenspaces. In batch normalized networks, these two effects are almost absent. We characterize these effects, and explain how they affect optimization speed through both theory and experiments. As part of this work, we adapt advanced tools from numerical linear algebra that allow scalable and accurate estimation of the entire Hessian spectrum of ImageNet-scale neural networks; this technique may be of independent interest in other applications.},
+  author    = {Behrooz Ghorbani and Shankar Krishnan and Ying Xiao},
+  journal   = {36th International Conference on Machine Learning, ICML 2019},
+  month     = {1},
+  pages     = {4039-4052},
+  publisher = {International Machine Learning Society (IMLS)},
+  title     = {An Investigation into Neural Net Optimization via Hessian Eigenvalue Density},
+  volume    = {2019-June},
+  url       = {http://arxiv.org/abs/1901.10159},
+  year      = {2019}
+}
+@article{Ramachandran2017,
+  abstract = {The choice of activation functions in deep networks has a significant effect on the training dynamics and task performance. Currently, the most successful and widely-used activation function is the Rectified Linear Unit (ReLU). Although various hand-designed alternatives to ReLU have been proposed, none have managed to replace it due to inconsistent gains. In this work, we propose to leverage automatic search techniques to discover new activation functions. Using a combination of exhaustive and reinforcement learning-based search, we discover multiple novel activation functions. We verify the effectiveness of the searches by conducting an empirical evaluation with the best discovered activation function. Our experiments show that the best discovered activation function, $f(x) = x \cdot \text\{sigmoid\}(\beta x)$, which we name Swish, tends to work better than ReLU on deeper models across a number of challenging datasets. For example, simply replacing ReLUs with Swish units improves top-1 classification accuracy on ImageNet by 0.9\% for Mobile NASNet-A and 0.6\% for Inception-ResNet-v2. The simplicity of Swish and its similarity to ReLU make it easy for practitioners to replace ReLUs with Swish units in any neural network.},
+  author   = {Prajit Ramachandran and Barret Zoph and Quoc V. Le},
+  month    = {10},
+  title    = {Searching for Activation Functions},
+  url      = {http://arxiv.org/abs/1710.05941},
+  year     = {2017}
+}
+@article{Dwork2013,
+  abstract  = {The problem of privacy-preserving data analysis has a long history spanning multiple disciplines. As electronic data about individuals becomes increasingly detailed, and as technology enables ever more powerful collection and curation of these data, the need increases for a robust, meaningful, and mathematically rigorous definition of privacy, together with a computationally rich class of algorithms that satisfy this definition. Differential Privacy is such a definition. After motivating and discussing the meaning of differential privacy, the preponderance of this monograph is devoted to fundamental techniques for achieving differential privacy, and application of these techniques in creative combinations, using the query-release problem as an ongoing example. A key point is that, by rethinking the computational goal, one can often obtain far better results than would be achieved by methodically replacing each step of a non-private computation with a differentially private implementation. Despite some astonishingly powerful computational results, there are still fundamental limitations - not just on what can be achieved with differential privacy but on what can be achieved with any method that protects against a complete breakdown in privacy. Virtually all the algorithms discussed herein maintain differential privacy against adversaries of arbitrary computational power. Certain algorithms are computationally intensive, others are efficient. Computational complexity for the adversary and the algorithm are both discussed. We then turn from fundamentals to applications other than queryrelease, discussing differentially private methods for mechanism design and machine learning. The vast majority of the literature on differentially private algorithms considers a single, static, database that is subject to many analyses. Differential privacy in other models, including distributed databases and computations on data streams is discussed. Finally, we note that this work is meant as a thorough introduction to the problems and techniques of differential privacy, but is not intended to be an exhaustive survey- there is by now a vast amount of work in differential privacy, and we can cover only a small portion of it. © 2014 C. Dwork and A. Roth.},
+  author    = {Cynthia Dwork and Aaron Roth},
+  doi       = {10.1561/0400000042},
+  issn      = {15513068},
+  issue     = {3-4},
+  journal   = {Foundations and Trends in Theoretical Computer Science},
+  pages     = {211-487},
+  publisher = {Now Publishers Inc},
+  title     = {The algorithmic foundations of differential privacy},
+  volume    = {9},
+  year      = {2013}
+}
+@report{Choromanska2015,
+  abstract = {We study the connection between the highly non-convex loss function of a simple model of the fully-connected feed-forward neural network and the Hamiltonian of the spherical spin-glass model under the assumptions of: i) variable independence, ii) redundancy in network parametrization, and iii) uniformity. These assumptions enable us to explain the complexity of the fully decoupled neural network through the prism of the results from random matrix theory. We show that for large-size decoupled networks the lowest critical values of the random loss function form a layered structure and they are located in a well-defined band lower-bounded by the global minimum. The number of local minima outside that band diminishes exponentially with the size of the network. We empirically verify that the mathematical model exhibits similar behavior as the computer simulations , despite the presence of high dependencies in real networks. We conjecture that both simulated annealing and SGD converge to the band of low critical points, and that all critical points found there are local minima of high quality measured by the test error. This emphasizes a major difference between large-and small-size networks where for the latter poor quality local minima have non-zero probability of being recovered. Finally, we prove that recovering the global minimum becomes harder as the network size increases and that it is in practice irrelevant as global minimum often leads to overfitting.},
+  author   = {Anna Choromanska and Mikael Henaff and Michael Mathieu and Gérard Ben Arous and Yann Lecun},
+  title    = {The Loss Surfaces of Multilayer Networks},
+  volume   = {38},
+  year     = {2015}
+}
+@report{Milewski2019,
+  author = {Bartosz Milewski},
+  title  = {Category Theory for Programmers Igal Tabachnik Category Theory for Programmers},
+  url    = {https://github.com/hmemcpy/milewski-ctfp-pdf},
+  year   = {2019}
+}
+@article{Fort2019,
+  abstract = {The local geometry of high dimensional neural network loss landscapes can both challenge our cherished theoretical intuitions as well as dramatically impact the practical success of neural network training. Indeed recent works have observed 4 striking local properties of neural loss landscapes on classification tasks: (1) the landscape exhibits exactly $C$ directions of high positive curvature, where $C$ is the number of classes; (2) gradient directions are largely confined to this extremely low dimensional subspace of positive Hessian curvature, leaving the vast majority of directions in weight space unexplored; (3) gradient descent transiently explores intermediate regions of higher positive curvature before eventually finding flatter minima; (4) training can be successful even when confined to low dimensional \{\it random\} affine hyperplanes, as long as these hyperplanes intersect a Goldilocks zone of higher than average curvature. We develop a simple theoretical model of gradients and Hessians, justified by numerical experiments on architectures and datasets used in practice, that \{\it simultaneously\} accounts for all $4$ of these surprising and seemingly unrelated properties. Our unified model provides conceptual insights into the emergence of these properties and makes connections with diverse topics in neural networks, random matrix theory, and spin glasses, including the neural tangent kernel, BBP phase transitions, and Derrida's random energy model.},
+  author   = {Stanislav Fort and Surya Ganguli},
+  month    = {10},
+  title    = {Emergent properties of the local geometry of neural loss landscapes},
+  url      = {http://arxiv.org/abs/1910.05929},
+  year     = {2019}
+}
+@report{Choromanska2015,
+  abstract = {We study the connection between the highly non-convex loss function of a simple model of the fully-connected feed-forward neural network and the Hamiltonian of the spherical spin-glass model under the assumptions of: i) variable independence, ii) redundancy in network parametrization, and iii) uniformity. These assumptions enable us to explain the complexity of the fully decoupled neural network through the prism of the results from random matrix theory. We show that for large-size decoupled networks the lowest critical values of the random loss function form a layered structure and they are located in a well-defined band lower-bounded by the global minimum. The number of local minima outside that band diminishes exponentially with the size of the network. We empirically verify that the mathematical model exhibits similar behavior as the computer simulations , despite the presence of high dependencies in real networks. We conjecture that both simulated annealing and SGD converge to the band of low critical points, and that all critical points found there are local minima of high quality measured by the test error. This emphasizes a major difference between large-and small-size networks where for the latter poor quality local minima have non-zero probability of being recovered. Finally, we prove that recovering the global minimum becomes harder as the network size increases and that it is in practice irrelevant as global minimum often leads to overfitting.},
+  author   = {Anna Choromanska and Mikael Henaff and Michael Mathieu and Gérard Ben Arous and Yann Lecun},
+  title    = {The Loss Surfaces of Multilayer Networks},
+  volume   = {38},
+  year     = {2015}
+}
+@article{Wadia2020,
+  abstract = {Machine learning is predicated on the concept of generalization: a model achieving low error on a sufficiently large training set should also perform well on novel samples from the same distribution. We show that both data whitening and second order optimization can harm or entirely prevent generalization. In general, model training harnesses information contained in the sample-sample second moment matrix of a dataset. We prove that for models with a fully connected first layer, the information contained in this matrix is the only information which can be used to generalize. Models trained using whitened data, or with certain second order optimization schemes, have less access to this information; in the high dimensional regime they have no access at all, producing models that generalize poorly or not at all. We experimentally verify these predictions for several architectures, and further demonstrate that generalization continues to be harmed even when theoretical requirements are relaxed. However, we also show experimentally that regularized second order optimization can provide a practical tradeoff, where training is still accelerated but less information is lost, and generalization can in some circumstances even improve.},
+  author   = {Neha S. Wadia and Daniel Duckworth and Samuel S. Schoenholz and Ethan Dyer and Jascha Sohl-Dickstein},
+  month    = {8},
+  title    = {Whitening and second order optimization both destroy information about the dataset, and can make generalization impossible},
+  url      = {http://arxiv.org/abs/2008.07545},
+  year     = {2020}
+}
+@article{Gomez2017,
+  abstract  = {Deep residual networks (ResNets) have significantly pushed forward the state-of-the-art on image classification, increasing in performance as networks grow both deeper and wider. However, memory consumption becomes a bottleneck, as one needs to store the activations in order to calculate gradients using backpropagation. We present the Reversible Residual Network (RevNet), a variant of ResNets where each layer's activations can be reconstructed exactly from the next layer's. Therefore, the activations for most layers need not be stored in memory during backpropagation. We demonstrate the effectiveness of RevNets on CIFAR-10, CIFAR-100, and ImageNet, establishing nearly identical classification accuracy to equally-sized ResNets, even though the activation storage requirements are independent of depth.},
+  author    = {Aidan N. Gomez and Mengye Ren and Raquel Urtasun and Roger B. Grosse},
+  journal   = {Advances in Neural Information Processing Systems},
+  month     = {7},
+  pages     = {2215-2225},
+  publisher = {Neural information processing systems foundation},
+  title     = {The Reversible Residual Network: Backpropagation Without Storing Activations},
+  volume    = {2017-December},
+  url       = {http://arxiv.org/abs/1707.04585 https://github.com/renmengye/revnet-public https://iclr.cc/virtual_2020/speaker_4.html},
+  year      = {2017}
+}
+@article{Gomez2017,
+  abstract  = {Deep residual networks (ResNets) have significantly pushed forward the state-of-the-art on image classification, increasing in performance as networks grow both deeper and wider. However, memory consumption becomes a bottleneck, as one needs to store the activations in order to calculate gradients using backpropagation. We present the Reversible Residual Network (RevNet), a variant of ResNets where each layer's activations can be reconstructed exactly from the next layer's. Therefore, the activations for most layers need not be stored in memory during backpropagation. We demonstrate the effectiveness of RevNets on CIFAR-10, CIFAR-100, and ImageNet, establishing nearly identical classification accuracy to equally-sized ResNets, even though the activation storage requirements are independent of depth.},
+  author    = {Aidan N. Gomez and Mengye Ren and Raquel Urtasun and Roger B. Grosse},
+  journal   = {Advances in Neural Information Processing Systems},
+  month     = {7},
+  pages     = {2215-2225},
+  publisher = {Neural information processing systems foundation},
+  title     = {The Reversible Residual Network: Backpropagation Without Storing Activations},
+  volume    = {2017-December},
+  url       = {http://arxiv.org/abs/1707.04585},
+  year      = {2017}
+}
+@report{Wolpert1997,
+  abstract = {A framework is developed to explore the connection between effective optimization algorithms and the problems they are solving. A number of "no free lunch" (NFL) theorems are presented which establish that for any algorithm, any elevated performance over one class of problems is offset by performance over another class. These theorems result in a geometric interpretation of what it means for an algorithm to be well suited to an optimization problem. Applications of the NFL theorems to information-theoretic aspects of optimization and benchmark measures of performance are also presented. Other issues addressed include time-varying optimization problems and a priori "head-to-head" minimax distinctions between optimization algorithms, distinctions that result despite the NFL theorems' enforcing of a type of uniformity over all algorithms.},
+  author   = {David H Wolpert and William G Macready},
+  issue    = {1},
+  journal  = {IEEE TRANSACTIONS ON EVOLUTIONARY COMPUTATION},
+  keywords = {Index Terms-Evolutionary algorithms,information theory,optimization},
+  pages    = {67},
+  title    = {No Free Lunch Theorems for Optimization},
+  volume   = {1},
+  year     = {1997}
+}
+@article{Papyan2019,
+  abstract  = {We consider deep classifying neural networks. We expose a structure in the derivative of the logits with respect to the parameters of the model, which is used to explain the existence of outliers in the spectrum of the Hessian. Previous works decomposed the Hessian into two components, attributing the outliers to one of them, the so-called Covariance of gradients. We show this term is not a Covariance but a second moment matrix, i.e., it is influenced by means of gradients. These means possess an additive two-way structure that is the source of the outliers in the spectrum. This structure can be used to approximate the principal subspace of the Hessian using certain "averaging" operations, avoiding the need for high-dimensional eigenanalysis. We corroborate this claim across different datasets, architectures and sample sizes.},
+  author    = {Vardan Papyan},
+  journal   = {36th International Conference on Machine Learning, ICML 2019},
+  month     = {1},
+  pages     = {8819-8830},
+  publisher = {International Machine Learning Society (IMLS)},
+  title     = {Measurements of Three-Level Hierarchical Structure in the Outliers in the Spectrum of Deepnet Hessians},
+  volume    = {2019-June},
+  url       = {http://arxiv.org/abs/1901.08244},
+  year      = {2019}
+}
+@article{Ghorbani2019,
+  abstract  = {To understand the dynamics of optimization in deep neural networks, we develop a tool to study the evolution of the entire Hessian spectrum throughout the optimization process. Using this, we study a number of hypotheses concerning smoothness, curvature, and sharpness in the deep learning literature. We then thoroughly analyze a crucial structural feature of the spectra: in non-batch normalized networks, we observe the rapid appearance of large isolated eigenvalues in the spectrum, along with a surprising concentration of the gradient in the corresponding eigenspaces. In batch normalized networks, these two effects are almost absent. We characterize these effects, and explain how they affect optimization speed through both theory and experiments. As part of this work, we adapt advanced tools from numerical linear algebra that allow scalable and accurate estimation of the entire Hessian spectrum of ImageNet-scale neural networks; this technique may be of independent interest in other applications.},
+  author    = {Behrooz Ghorbani and Shankar Krishnan and Ying Xiao},
+  journal   = {36th International Conference on Machine Learning, ICML 2019},
+  month     = {1},
+  pages     = {4039-4052},
+  publisher = {International Machine Learning Society (IMLS)},
+  title     = {An Investigation into Neural Net Optimization via Hessian Eigenvalue Density},
+  volume    = {2019-June},
+  url       = {http://arxiv.org/abs/1901.10159},
+  year      = {2019}
+}
